@@ -1,6 +1,6 @@
 # pwdtools
 
-few alias that will save you time if you work on linux
+few alias that will save you time if you work on Linux
 
 # Install
 ```sh
@@ -21,6 +21,7 @@ $ lpwd
 
 Create a shortcut:
 ```
+$ cd your_path_ugly_and_hard_to_remember
 $ spwd shortcut
 ```
 
