@@ -6,9 +6,7 @@
 ## \___||_| |_| \__,_||_| \__, ||_| |_| _____  \___|
 ##                       |___/        |_____|
 
-alias gitls='git ls-tree -r -t origin/master --name-only'
 
-alias mirrors='sudo pacman-mirrors -g'
 
 # pwd caching {{
 
@@ -24,7 +22,7 @@ mkdir -p $PWD_DB
 
 function spwd
 {
-    [ -z "$1" ] && spwd start || ( rm "$PWD_DB/$1" ; ln -s "$(pwd)" "$PWD_DB/$1")
+    [ -z "$1" ] && spwd start || ( dpwd "$1" ; ln -s "$(pwd)" "$PWD_DB/$1")
 }
 
 function lpwd
@@ -41,6 +39,6 @@ function dpwd
 # [ -e "$PWD_DB/start" ] && [ "$(pwd)" = "$HOME" ] && lpwd start
 [ -e "$PWD_DB/start" ] && lpwd start
 
+# gift :
 alias meteo='curl -s http://wttr.in/$1'
-alias network='lsof -Pan -i tcp -i udp'
-
+alias gitls='git ls-tree -r -t origin/master --name-only'
