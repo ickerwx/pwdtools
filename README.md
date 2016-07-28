@@ -46,5 +46,5 @@ License
 
 MIT
 
-**Free Software, Hell Yeah!**
+**Free Software, Hell Yeah! pay me a beer @chaign_c :) **
 
