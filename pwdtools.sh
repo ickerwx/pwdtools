@@ -10,34 +10,34 @@
 
 # pwd caching {{
 
-alias spwd='spwd'
-alias lpwd='lpwd'
-alias dpwd='dpwd'
+alias sp='sp'
+alias lp='lp'
+alias dp='dp'
 
 # PROMPT_COMMAND='pwd > "${XDG_RUNTIME_DIR}/.pwd_cache_d3fault"'
 
-export PWD_DB=~/.pwd/ln
+export PWD_DB=~/.pwd
 mkdir -p $PWD_DB
 
 
-function spwd
+function sp
 {
-    [ -z "$1" ] && spwd start || ( dpwd "$1" ; ln -s "$(pwd)" "$PWD_DB/$1")
+    [ -z "$1" ] && sp start || ( dp "$1" ; ln -s "$(pwd)" "$PWD_DB/$1")
 }
 
-function lpwd
+function lp
 {
-    [ -z "$1" ] && lpwd start || cd "$( readlink "$PWD_DB/$1" || echo Invalid Link )"
+    [ -z "$1" ] && lp start || cd "$( readlink "$PWD_DB/$1" || echo Invalid Link )"
 }
 
-function dpwd
+function dp
 {
-    [ -z "$1" ] && echo "Usage: dpwd link" || ( [ -e "$PWD_DB/$1" ] && rm "$PWD_DB/$1" )
+    [ -z "$1" ] && echo "Usage: dp link" || ( [ -e "$PWD_DB/$1" ] && rm "$PWD_DB/$1" )
 }
 
-[ -e "$PWD_DB/start" ] || spwd start
-# [ -e "$PWD_DB/start" ] && [ "$(pwd)" = "$HOME" ] && lpwd start
-[ -e "$PWD_DB/start" ] && lpwd start
+[ -e "$PWD_DB/start" ] || sp start
+# [ -e "$PWD_DB/start" ] && [ "$(pwd)" = "$HOME" ] && lp start
+[ -e "$PWD_DB/start" ] && lp start
 
 # gift :
 alias meteo='curl -s http://wttr.in/$1'

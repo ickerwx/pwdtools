@@ -11,30 +11,32 @@ $ echo "source ~/pwdtools/pwdtools.sh" >> ~/.bashrc
 # How to use
 Set the path of the current directory of all starting shell:
 ```
-$ spwd
+$ sp
 ```
 
 Go back to the starting path
 ```
-$ lpwd
+$ lp
 ```
 
 Create a shortcut:
 ```
 $ cd your_path_ugly_and_hard_to_remember
-$ spwd shortcut
+$ sp shortcut
 ```
 
 Load a shortcut
 ```
-$ lpwd shortcut
+$ lp shortcut
 ```
 
-For example you can create a shortcut to you favorite project spwd favorite, wherever this project is you don't have to remember or go throught the pain of find/ cd //// it just lpwd favorite.
+For example you can create a shortcut to you favorite project sp favorite, wherever this project is you don't have to remember or go throught the pain of find/ cd //// it just lp favorite.
 
 I tried several ways of implementing this and symbolic links sound like the best way to go.
 
-Tips: you can: cp something ~/.pwd/ln/favorite
+Tips:
+you can: cp something ~/.pwd/favorite
+use initials, your brain likes it, for example: mc => myconf, al => archlinux
 
 
 ### Todos
