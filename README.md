@@ -36,6 +36,7 @@ I tried several ways of implementing this and symbolic links sound like the best
 
 Tips:
 you can: cp something ~/.pwd/favorite
+
 use initials, your brain likes it, for example: mc => myconf, al => archlinux
 
 
