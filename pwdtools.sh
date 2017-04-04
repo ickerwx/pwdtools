@@ -10,9 +10,9 @@
 
 # pwd caching {{
 
-alias sp='sp'
-alias lp='lp'
-alias dp='dp'
+# alias sp='sp'
+# alias lp='lp'
+# alias dp='dp'
 
 # PROMPT_COMMAND='pwd > "${XDG_RUNTIME_DIR}/.pwd_cache_d3fault"'
 
@@ -35,9 +35,29 @@ function dp
     [ -z "$1" ] && echo "Usage: dp link" || ( [ -e "$PWD_DB/$1" ] && rm "$PWD_DB/$1" )
 }
 
+WORKSPACE=$(i3-msg -t get_workspaces | jq -r '.[]|select(.focused==true).name')
+
+function lpw
+{
+  [ -e "$PWD_DB/start$WORKSPACE" ] && lp start$WORKSPACE
+}
+
+function spw
+{
+  sp start$WORKSPACE
+}
+
+function dpw
+{
+  dp start$WORKSPACE
+}
+
 [ -e "$PWD_DB/start" ] || sp start
+
 # [ -e "$PWD_DB/start" ] && [ "$(pwd)" = "$HOME" ] && lp start
-[ -e "$PWD_DB/start" ] && lp start
+# load start path
+lp
+lpw
 
 # gift :
 alias meteo='curl -s http://wttr.in/$1'

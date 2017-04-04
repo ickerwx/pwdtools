@@ -1,1 +1,2 @@
 20/08/2016: rename lpwd => lp, spwd => sp, dpwd => dp
+04/04/2017: a current working directory per workspace
