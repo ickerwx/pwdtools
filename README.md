@@ -41,6 +41,7 @@ $ dp shortcut
 I tried several ways of implementing this and symbolic links sound like the best way to go.
 
 If you are using i3 you can have a "current working directory" per workspace,
+   this need jq to be installed (a command-line JSON procesor)
 ```
 $ # define it (set path)
 $ spw
