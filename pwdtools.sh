@@ -53,9 +53,11 @@ function dpw
 [ -e "$PWD_DB/start" ] || sp start
 
 # [ -e "$PWD_DB/start" ] && [ "$(pwd)" = "$HOME" ] && lp start
-# load start path
-lp
-lpw
+# load start path only if parent is term like gnome-term
+if grep term /proc/$PPID/comm ; then
+	lp
+	lpw
+fi
 
 # gift :
 alias meteo='curl -s http://wttr.in/$1'
