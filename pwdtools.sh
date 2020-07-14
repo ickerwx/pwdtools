@@ -55,10 +55,10 @@ function dpw
 # [ -e "$PWD_DB/start" ] && [ "$(pwd)" = "$HOME" ] && lp start
 # load start path only if parent is term like gnome-term
 if grep term /proc/$PPID/comm &>/dev/null; then
-	if test -z $NOPWD
+  if test -z $NOPWD
     then
-        lp
-    	lpw
+      lp
+      lpw
     fi
 fi
 
