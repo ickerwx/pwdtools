@@ -56,6 +56,13 @@ you can: cp something ~/.pwd/favorite
 
 use initials, your brain likes it, for example: mc => myconf, al => archlinux
 
+use the `$NOPWD` environment variable to toggle the initial loading of your saved path:
+```
+$ # this will start a terminal and automatically execute lp/lpw
+$ gnome-terminal
+$ # this will start a terminal without executing lp/lpw. You can still do it manually
+$ NOPWD=1 gnome-terminal
+```
 
 ### Todos
 
